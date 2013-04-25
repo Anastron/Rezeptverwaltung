@@ -9,7 +9,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-//import Warmrezept.Warmrezepte;
 
 public class Warmhinzu extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -57,11 +56,7 @@ public class Warmhinzu extends JFrame {
 		browse = new JButton("Browse...");
 		browse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {   
-				JFileChooser chooser = new JFileChooser();
-				
-				if(chooser.showOpenDialog(Warmhinzu.this) == JFileChooser.APPROVE_OPTION){
-					Dateipfad.setText(chooser.getSelectedFile().getAbsolutePath());				
-				}
+				onBrowse();
 			}
 		});
 		browse.setBounds(256, 102, 98, 26);
@@ -87,5 +82,13 @@ public class Warmhinzu extends JFrame {
 		});
 		btnAbbrechen.setBounds(148, 192, 98, 26);
 		getContentPane().add(btnAbbrechen);
+	}
+	
+	private void onBrowse() {
+		JFileChooser chooser = new JFileChooser();
+				
+		if(chooser.showOpenDialog(Warmhinzu.this) == JFileChooser.APPROVE_OPTION){
+			Dateipfad.setText(chooser.getSelectedFile().getAbsolutePath());				
+		}
 	}
 }
