@@ -1,16 +1,17 @@
 package main;
 
-import javax.swing.JFrame;
 import java.awt.Dimension;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JCheckBox;
-import java.awt.Window.Type;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class CoChoose extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JLabel lblWelcherArtIst;
 	private JCheckBox chckbxMitAlkohol;
 	private JCheckBox chckbxOhneAlkohol;

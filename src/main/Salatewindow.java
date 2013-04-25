@@ -42,6 +42,7 @@ public class Salatewindow extends JFrame {
 	private JScrollPane scrollPane;
 	
 	public Salatewindow(Mainwindow win) {
+		setTitle("Salatgerichte");
 		own = win;
 		
 		initGUI();
