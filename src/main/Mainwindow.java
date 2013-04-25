@@ -64,6 +64,13 @@ public class Mainwindow extends JFrame{
 		getContentPane().add(btnSoenDips);
 		
 		JButton btnDesserts = new JButton("Desserts");
+		btnDesserts.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Dessertwindow dessert = new Dessertwindow(Mainwindow.this);
+				dessert.setVisible(true);
+				Mainwindow.this.setState(JFrame.ICONIFIED);
+			}
+		});
 		btnDesserts.setBounds(215, 121, 128, 32);
 		getContentPane().add(btnDesserts);
 		
