@@ -10,15 +10,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Mainwindow extends JFrame{
-
 	private static final long serialVersionUID = 1L;
 	private JButton btnInfo;
+	
 	public Mainwindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initGUI();
 		setLocationRelativeTo(null);
-			
-		
 	}
 	
 	private void initGUI() {
