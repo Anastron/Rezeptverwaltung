@@ -56,7 +56,7 @@ public class Mainwindow extends JFrame{
 		JButton btnSoenDips = new JButton("So\u00DFen/ Dips");
 		btnSoenDips.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				SoDiChoose SoDivote = new SoDiChoose();
+				SoDiChoose SoDivote = new SoDiChoose(Mainwindow.this);
 				SoDivote.setVisible(true);
 			}
 		});

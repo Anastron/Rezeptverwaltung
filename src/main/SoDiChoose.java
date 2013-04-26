@@ -20,9 +20,14 @@ public class SoDiChoose extends JFrame {
 	private JButton btnOk;
 	private JButton btnAbbrechen;
 	private JCheckBox chckbxNewCheckBox;
-	public SoDiChoose() {
+	
+	private Mainwindow own;
+	
+	public SoDiChoose(Mainwindow win) {
 		initGUI();
 		setLocationRelativeTo(null);
+		
+		own = win;
 	}
 	private void initGUI() {
 		setTitle("Auswahl");
@@ -30,6 +35,8 @@ public class SoDiChoose extends JFrame {
 		setType(Type.UTILITY);
 		setSize(new Dimension(234, 193));
 		getContentPane().setLayout(null);
+		
+		
 		
 		rdbtnS = new JCheckBox("S\u00FC\u00DF");
 		rdbtnS.setBounds(21, 62, 109, 23);
@@ -53,6 +60,11 @@ public class SoDiChoose extends JFrame {
 		getContentPane().add(lblMehrereEingabenMglich);
 		
 		btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				openDipp();
+			}
+		});
 		btnOk.setBounds(117, 135, 99, 26);
 		getContentPane().add(btnOk);
 		
@@ -69,5 +81,12 @@ public class SoDiChoose extends JFrame {
 		chckbxNewCheckBox = new JCheckBox("Barbecue");
 		chckbxNewCheckBox.setBounds(143, 88, 97, 23);
 		getContentPane().add(chckbxNewCheckBox);
+	}
+	private void openDipp(){
+		Dippwindow dipp = new Dippwindow();
+		dipp.setVisible(true);
+		setVisible(false);
+		own.setState(JFrame.ICONIFIED);
+		
 	}
 }

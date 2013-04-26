@@ -37,6 +37,9 @@ public class Dessertwindow extends JFrame {
 	ArrayList<String> desserts = new ArrayList<>();
 
 	public Dessertwindow(Mainwindow win) {
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setTitle("Desserts");
 		own = win;
 		
 		initGUI();
@@ -138,7 +141,6 @@ public class Dessertwindow extends JFrame {
 	}
 	private void initGUI() {
 		setSize(new Dimension(732, 413));
-		setResizable(false);
 	}
 	
 	private void addDessert(){
