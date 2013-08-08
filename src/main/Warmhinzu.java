@@ -66,6 +66,8 @@ public class Warmhinzu extends JFrame {
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				owner.onAddRezept(Rezeptname.getText(), Dateipfad.getText());
+				RezeptBank rez = new RezeptBank();
+				rez.saveRezept("Warme_Rezepte", Rezeptname.getText(), Dateipfad.getText());
 				setVisible(false);
 				
 				 
