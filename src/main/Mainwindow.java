@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,7 +28,7 @@ public class Mainwindow extends JFrame{
 		JButton btnNewButton = new JButton("Warme Gerichte");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Warmrezepte WaRe = new Warmrezepte(Mainwindow.this);
+				Warmrezepte WaRe = new Warmrezepte(Mainwindow.this);				
 				WaRe.setVisible(true);
 				Mainwindow.this.setState(JFrame.ICONIFIED);
 				}

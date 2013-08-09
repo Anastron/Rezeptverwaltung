@@ -25,8 +25,8 @@ public class Info extends JFrame {
 		setType(Type.UTILITY);
 		getContentPane().setLayout(null);
 		
-		lblVAlpha = new JLabel("alpha0.3.1");
-		lblVAlpha.setBounds(99, 12, 89, 16);
+		lblVAlpha = new JLabel("beta 0.4.0");
+		lblVAlpha.setBounds(98, 12, 89, 16);
 		getContentPane().add(lblVAlpha);
 		
 		lblVersion = new JLabel("Version:");

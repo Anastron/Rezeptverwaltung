@@ -42,11 +42,15 @@ public class Warmrezepte extends JFrame {
 	private JPanel panel;
 	private JTextField txtSuchen;
 	private JScrollPane scrollPane;
+	private JMenu mnListe;
+	private JMenuItem mntmAktualisieren;
 	
 	public Warmrezepte(Mainwindow win) {
 		setTitle("Die Rezepte f\u00FCr warme Gerichte");
 		own = win;
+
 		
+				
 		initGUI();
 		setLocationRelativeTo(null);	
 		
@@ -87,6 +91,12 @@ public class Warmrezepte extends JFrame {
 				// nothing
 			}
 		});
+		
+	    try {
+	        aktual();
+	    } catch (Exception e) {
+	        System.out.println("Keine Rezepte vorhanden");
+	    }
 	}
 
 	private void initGUI() {
@@ -122,6 +132,17 @@ public class Warmrezepte extends JFrame {
 		
 		btnLsschen.setMaximumSize(new Dimension(100, 26));
 		mnNewMenu.add(btnLsschen);
+		
+		mnListe = new JMenu("Liste");
+		menuBar.add(mnListe);
+		
+		mntmAktualisieren = new JMenuItem("Aktualisieren");
+		mntmAktualisieren.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				aktual();
+			}
+		});
+		mnListe.add(mntmAktualisieren);
 		DefaultListModel<String> dlm = new DefaultListModel<>();
 		
 		panel = new JPanel();
@@ -175,6 +196,16 @@ public class Warmrezepte extends JFrame {
 					});
 				Warme_rezepte.setModel(dlm);
 
+	}
+	public void aktual(){
+		RezeptBank rezBank = new RezeptBank();
+		rezBank.getRezept("Warme_Rezepte");
+		
+        for(int i =0; i < rezBank.getVecName().size(); i++)
+        {
+        	onAddRezept(rezBank.getVecName().elementAt(i), rezBank.getVecPfad().elementAt(i));
+        }
+		
 	}
 	
 	public void onAddRezept(String rezname, String path) {
