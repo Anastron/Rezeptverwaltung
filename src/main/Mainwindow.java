@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 public class Mainwindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JButton btnInfo;
+	private JButton btnEinstellungen;
 	
 	public Mainwindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,5 +94,13 @@ public class Mainwindow extends JFrame{
 		btnInfo.setFont(new Font("Dialog", Font.BOLD, 8));
 		btnInfo.setBounds(333, 217, 49, 19);
 		getContentPane().add(btnInfo);
+		
+		btnEinstellungen = new JButton("Einstellungen");
+		btnEinstellungen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnEinstellungen.setBounds(215, 176, 127, 32);
+		getContentPane().add(btnEinstellungen);
 	}
 }
