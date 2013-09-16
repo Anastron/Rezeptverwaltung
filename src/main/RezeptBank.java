@@ -26,7 +26,7 @@ public class RezeptBank {
 	private void addRezept(String rezKategorie, String rezName, String rezPfad){
 		try
 		{
-			File file = new File("C:\\" + rezKategorie + ".txt");
+			File file = new File(rezKategorie + ".txt");
 			FileWriter fw = null;
 			
 			if(file.exists())
@@ -57,7 +57,7 @@ public class RezeptBank {
 	private void getFile(String rezKategorie){
         BufferedReader br = null;
         try {
-       		br = new BufferedReader(new FileReader(new File("C:\\" + rezKategorie + ".txt")));
+       		br = new BufferedReader(new FileReader(new File(rezKategorie + ".txt")));
        		String line = null;
        		
        		
@@ -88,5 +88,11 @@ public class RezeptBank {
 	}
 	public Vector<String> getVecPfad(){
 		return vecPfad;
+	}
+	
+	public void deleteRez(int line, String rezName)
+	{
+		
+		
 	}
 }

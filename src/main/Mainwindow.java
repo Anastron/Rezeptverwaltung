@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Mainwindow extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -98,6 +99,7 @@ public class Mainwindow extends JFrame{
 		btnEinstellungen = new JButton("Einstellungen");
 		btnEinstellungen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Diese Option ist leider noch nicht verfügbar :(", "Nicht verfügbar", JOptionPane.OK_CANCEL_OPTION);
 			}
 		});
 		btnEinstellungen.setBounds(215, 176, 127, 32);
