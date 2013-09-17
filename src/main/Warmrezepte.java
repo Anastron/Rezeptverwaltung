@@ -127,6 +127,12 @@ public class Warmrezepte extends JFrame {
 				selectwert = Warme_rezepte.getSelectedIndex();
 				warmarray.remove(selectwert);
 				((DefaultListModel<String>) Warme_rezepte.getModel()).removeElementAt(selectwert);
+				RezeptBank rezBank = new RezeptBank();
+				try {
+					rezBank.deleteRez(selectwert, "Warme_rezepte");
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		

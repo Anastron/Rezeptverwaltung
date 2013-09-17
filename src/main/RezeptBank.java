@@ -90,9 +90,36 @@ public class RezeptBank {
 		return vecPfad;
 	}
 	
-	public void deleteRez(int line, String rezName)
+	public void deleteRez(int lineNumber, String rezName) throws Exception
 	{
+		try
+		{
+			File file = new File(rezName + ".txt");
+			File kopie = new File(rezName + "kopie.txt");
+			FileWriter kwriter = new FileWriter(kopie, true);
+			FileReader freader = new FileReader(file);
+			BufferedReader reader = new BufferedReader(freader);
 		
-		
+			int counter = 0;
+			String line;
+			while((line = reader.readLine()) != null)
+			{
+				if(lineNumber != counter)
+				{
+					kwriter.write(line);
+					kwriter.write(System.getProperty("line.separator"));
+				}
+				counter++;
+			}
+			reader.close();
+			kwriter.close();
+
+			if(file.exists()) file.delete();
+			kopie.renameTo(new File(rezName + ".txt"));
+		} 
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
